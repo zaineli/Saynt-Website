@@ -7,6 +7,7 @@ interface FeatureCardProps {
   highlightText: string;
   beforeHighlight: string;
   afterHighlight?: string;
+  circlePosition?: 'bottom-right' | 'top-left';
 }
 
 export default function FeatureCard({ 
@@ -15,16 +16,48 @@ export default function FeatureCard({
   description, 
   highlightText,
   beforeHighlight,
-  afterHighlight 
+  afterHighlight,
+  circlePosition = 'bottom-right'
 }: FeatureCardProps) {
   return (
-    <div className="flex flex-col gap-5 w-full max-w-[380px]">
+    <div className="flex flex-col gap-5 w-full max-w-[420px]">
       {/* Main Card */}
       <div 
-        className="flex flex-col relative p-6 min-h-[380px]"
+        className="flex flex-col relative p-6 min-h-[440px]"
         style={{
-          borderRadius: '20px',
-          padding: '28px',
+          borderRadius: '8px',
+          padding: '32px',
+          background: '#181924',
+        }}
+      >
+        {/* Icon */}
+        <div className="size-[80px] relative z-10 mb-24">
+          <Image 
+            src={icon} 
+            alt={title} 
+            width={80}
+            height={80}
+            className="object-contain size-[80px]" 
+          />
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-white text-[48px] md:text-[32px] font-medium leading-tight relative z-10">
+          {title}
+        </h3>
+        
+        {/* Description */}
+        <p className="text-gray-400 text-[15px] md:text-[16px] leading-[1.6] relative z-10 mt-auto">
+          {description}
+        </p>
+      </div>
+
+      {/* Secondary Card */}
+      <div 
+        className="relative overflow-hidden flex items-center min-h-[90px]"
+        style={{
+          borderRadius: '16px',
+          padding: '24px 20px',
           background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.08) 100%)',
           border: '1px solid',
           borderImageSource: 'linear-gradient(180deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0) 100%)',
@@ -36,37 +69,6 @@ export default function FeatureCard({
             0px 236px 95px 0px rgba(0, 0, 0, 0.03),
             0px 369px 103px 0px rgba(0, 0, 0, 0)
           `
-        }}
-      >
-        {/* Icon */}
-        <div className="size-[72px] relative z-10 mb-8">
-          <Image 
-            src={icon} 
-            alt={title} 
-            width={72}
-            height={72}
-            className="object-contain size-[72px]" 
-          />
-        </div>
-        
-        {/* Title */}
-        <h3 className="text-white text-2xl md:text-3xl mb-5 font-semibold leading-tight relative z-10">
-          {title}
-        </h3>
-        
-        {/* Description */}
-        <p className="text-gray-400 text-sm md:text-base leading-relaxed relative z-10 mt-auto">
-          {description}
-        </p>
-      </div>
-
-      {/* Secondary Card */}
-      <div 
-        className="relative overflow-hidden flex items-center min-h-[90px]"
-        style={{
-          borderRadius: '16px',
-          padding: '24px 20px',
-          background: '#181924',
         }}
       >
         {/* Text with gradient highlights */}
@@ -83,13 +85,17 @@ export default function FeatureCard({
         </p>
         
         {/* Circle decoration */}
-        <div className="absolute -right-[15%] -bottom-[50%] w-32 h-32 opacity-15">
+        <div className={`absolute w-32 h-32 opacity-50 ${
+          circlePosition === 'top-left' 
+            ? '-right-[15%] -top-[60%]' 
+            : '-right-[15%] -bottom-[60%]'
+        }`}>
           <Image
             src="/circle.png"
             alt="Wave Decoration"
             width={128}
             height={128}
-            className="object-contain"
+            className="object-contain brightness-0 invert"
           />
         </div>
       </div>
