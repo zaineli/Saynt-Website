@@ -1,45 +1,81 @@
 'use client';
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  badge?: string;
+  title: string | React.ReactNode;
+  subtitle: string;
+  description?: string;
+  primaryButtonText?: string;
+  secondaryButtonText?: string;
+  showButtons?: boolean;
+}
+
+export default function HeroSection({
+  badge = "✱ AI-Powered Business Transformation",
+  title,
+  subtitle,
+  description,
+  primaryButtonText = "Start Your AI Assessment",
+  secondaryButtonText = "See Your ROI Potential",
+  showButtons = true
+}: HeroSectionProps) {
   return (
-    <section className="w-full py-20 lg:py-32">
-      <div className="max-w-8xl mx-auto flex flex-col items-center">
+    <section className="w-full min-h-screen flex items-center justify-center px-4 -mt-20 pt-20">
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center">
         {/* Badge */}
-        <div className="bg-gray-800/50 rounded-full px-5 py-2.5 mb-10">
-          <span className="text-gray-400 text-sm flex items-center gap-2">
-            <span className="text-white">✱</span> AI-Powered Business Transformation
-          </span>
-        </div>
+        {badge && (
+          <div className="bg-gray-800/50 rounded-full px-5 py-2.5 mb-10">
+            <span className="text-gray-400 text-sm flex items-center gap-2">
+              {badge}
+            </span>
+          </div>
+        )}
 
         {/* Main Heading */}
-        <h1 className="bg-gradient-to-r from-white to-[#BABABA] bg-clip-text text-transparent text-5xl md:text-6xl lg:text-8xl font-medium text-center mb-8">
-          Your Next Brilliant Move<br />
-          Might <span className="font-bold">Involve AI</span> That Delivers
+        <h1 
+          className="text-5xl md:text-6xl lg:text-[80px] font-medium text-center mb-8 leading-tight bg-clip-text text-transparent"
+          style={{
+            background: 'linear-gradient(85.88deg, #FFFFFF 72.98%, rgba(186, 186, 186, 0) 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          {title}
         </h1>
 
         {/* Subheading */}
-        <p className="text-gray-300 text-lg md:text-xl font-normal text-center mb-12 max-w-3xl leading-relaxed">
-          You get a proven AI partner focused on your ROI goals. We help you
-          automate workflows, accelerate execution, and achieve measurable
-          growth. Stop spending on AI experiments. Start profiting from real
-          business outcomes.
+        <p className="text-white text-lg md:text-2xl font-normal text-center mb-6 max-w-4xl leading-relaxed">
+          {subtitle}
         </p>
 
+        {/* Description */}
+        {description && (
+          <p className="text-gray-300 text-base md:text-lg font-normal text-center mb-12 max-w-4xl leading-relaxed">
+            {description}
+          </p>
+        )}
+
+        {!description && <div className="mb-12" />}
+
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button className="bg-gradient-to-r from-[#45FFD0] to-[#05FFEE] text-black font-semibold px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-            Start Your AI Assessment
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          <button className="bg-white hover:bg-gray-100 text-black font-semibold px-8 py-4 rounded-full flex items-center justify-center gap-2 transition-colors">
-            See Your ROI Potential
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
+        {showButtons && (
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className="bg-white text-black font-medium px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors">
+              {primaryButtonText}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            {secondaryButtonText && (
+              <button className="bg-white hover:bg-gray-100 text-black font-semibold px-8 py-4 rounded-full flex items-center justify-center gap-2 transition-colors">
+                {secondaryButtonText}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
