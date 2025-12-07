@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Calendar from 'react-calendar';
 import { Clock, Globe, Video, ChevronLeft, ChevronRight } from 'lucide-react';
-import Image from 'next/image';
 
 // Custom styles for the calendar to match the design
 const calendarStyles = `
@@ -72,8 +71,20 @@ const calendarStyles = `
   }
 `;
 
+type CalendarValue = Date | null | Date[] | [Date | null, Date | null];
+
 export default function StrategySession() {
-  const [date, setDate] = useState<any>(new Date());
+  const [date, setDate] = useState<Date>(new Date());
+
+  const handleDateChange = (value: CalendarValue) => {
+    setDate((previous) => {
+      if (Array.isArray(value)) {
+        return value[0] ?? previous;
+      }
+
+      return value ?? previous;
+    });
+  };
 
   return (
     <section className=" ">
@@ -143,13 +154,13 @@ export default function StrategySession() {
               
               <div className="flex-1">
                 <Calendar 
-                  onChange={setDate} 
+                  onChange={handleDateChange} 
                   value={date}
                   prevLabel={<ChevronLeft className="w-6 h-6" />}
                   nextLabel={<ChevronRight className="w-6 h-6" />}
                   prev2Label={null}
                   next2Label={null}
-                  formatShortWeekday={(locale, date) => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][date.getDay()]}
+                  formatShortWeekday={(locale: string | undefined, calendarDate: Date) => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][calendarDate.getDay()]}
                   showNavigation={false} 
                   view="month"
                   className="w-full h-full"

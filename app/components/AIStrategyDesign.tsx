@@ -1,65 +1,92 @@
 import React from 'react';
-import { BarChart3, Coins, Lightbulb } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 import Image from 'next/image';
 
-export default function AIStrategyDesign() {
+interface ServiceItem {
+  icon: LucideIcon;
+  text: string;
+}
+
+interface AIStrategyDesignProps {
+  title: string;
+  subtitle: string;
+  description: string;
+  items: ServiceItem[];
+  reverse?: boolean;
+  showServicesHeader?: boolean;
+}
+
+export default function AIStrategyDesign({
+  title,
+  subtitle,
+  description,
+  items,
+  reverse = false,
+  showServicesHeader = false
+}: AIStrategyDesignProps) {
   return (
-    <div className="min-h-screen w-full bg-[#020617] text-white relative overflow-hidden flex items-center justify-center">
+    <div className="w-full bg-[#020617] text-white relative py-20 lg:py-32 overflow-hidden">
       
-      {/* Background lines image - positioned in center connecting the two sections */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] pointer-events-none z-0">
-        <img 
-          src="/lines.png" 
-          alt="" 
-          className="w-full h-full object-contain"
-        />
+      {/* Background lines image - positioned in center connecting the two sections, flips with layout */}
+      <div className={`absolute top-1/2 -translate-y-1/2 w-[600px] h-[400px] pointer-events-none z-0 opacity-90 ${
+        reverse ? 'right-1/2 translate-x-1/2 scale-x-[-1]' : 'left-1/2 -translate-x-1/2'
+      }`}>
+        <div className="relative w-full h-full">
+          <Image 
+            src="/lines.png" 
+            alt="Decorative connector lines" 
+            fill
+            className="object-contain"
+            sizes="(min-width: 1024px) 600px, 100vw"
+            priority={false}
+          />
+        </div>
       </div>
       
-      <div className="relative z-10 w-[80%] mx-auto flex items-center justify-center">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 w-full items-center">
-          {/* Left Column */}
-          <div className="space-y-6 relative">
-            <h1 className="font-medium text-[56px] leading-[120%] tracking-[0%]">
-              AI Strategy and<br />Discovery
+      {/* Services Header */}
+      {showServicesHeader && (
+        <div className="text-center mb-20 relative z-10">
+          <h2 className="text-5xl font-medium text-white">Services</h2>
+        </div>
+      )}
+      
+      <div className="relative z-10 w-[85%] max-w-[1400px] mx-auto">
+        <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 w-full items-center ${reverse ? '' : ''}`}>
+          {/* Text Column */}
+          <div className={`space-y-6 relative ${reverse ? 'lg:order-2' : 'lg:order-1'}`}>
+            <h1 className="font-medium text-[48px] lg:text-[56px] leading-[120%] tracking-[0%]">
+              {title}
             </h1>
             
-            <h2 className="font-medium text-[32px] leading-[150%] tracking-[0%] text-[#45FFD0]">
-              Build Your Confident AI Investment<br />Plan
+            <h2 className="font-medium text-[28px] lg:text-[32px] leading-[150%] tracking-[0%] text-[#4ADE80]">
+              {subtitle}
             </h2>
             
-            <p className="font-normal text-[24px] leading-[150%] tracking-[0%] text-gray-300 max-w-xl">
-              We will pinpoint the AI opportunities that deliver
-              the highest return. Our strategy workshop gives
-              you a clear, business-focused roadmap and
-              actionable ROI model.
+            <p className="font-normal text-[18px] lg:text-[20px] leading-[150%] tracking-[0%] text-gray-300">
+              {description}
             </p>
           </div>
           
-          {/* Right Column - Single Card Container */}
-          <div className="bg-[#181924] rounded-3xl p-4 border border-white/5 shadow-2xl relative z-10 w-[600px] h-[422px] flex flex-col justify-center">
-            <div className="w-[500px] flex flex-col gap-6 justify-center mx-auto">
-              {/* Item 1 */}
-              <div className="flex items-center gap-6 mb-6 border-b border-white/10">
-                <div className="bg-white rounded-xl p-3 flex-shrink-0 w-16 h-16 flex items-center justify-center mb-6 ">
-                  <BarChart3 className="w-12 h-12 text-black" strokeWidth={1.5} />
-                </div>
-                <p className="font-[family-name:var(--font-urbanist)] font-normal text-[24px] leading-[28px] tracking-[0%] align-middle text-white">Your clear AI investment strategy</p>
-              </div>
-              
-              {/* Item 2 */}    
-              <div className="flex items-center gap-6 mb-6 border-b border-white/10">
-                <div className="bg-white rounded-xl p-3 flex-shrink-0 w-16 h-16 flex items-center justify-center mb-6">
-                  <Coins className="w-12 h-12 text-black" strokeWidth={1.5} />
-                </div>
-                <p className="font-[family-name:var(--font-urbanist)] font-normal text-[24px] leading-[28px] tracking-[0%] align-middle text-white">Your data-driven AI ROI model</p>
-              </div>
-              
-              {/* Item 3 */}
-              <div className="flex items-center gap-6 mb-6">
-                <div className="bg-white rounded-xl p-3 flex-shrink-0 w-16 h-16 flex items-center justify-center">
-                  <Lightbulb className="w-12 h-12 text-black" strokeWidth={1.5} />
-                </div>
-                <p className="font-[family-name:var(--font-urbanist)] font-normal text-[24px] leading-[28px] tracking-[0%] align-middle text-white">Your prioritized plan for AI<br />implementation</p>
+          {/* Card Column */}
+          <div className={`relative ${reverse ? 'lg:order-1' : 'lg:order-2'}`}>
+            <div className="bg-[#1F2937] rounded-3xl p-8 lg:p-10 border border-white/10 shadow-2xl">
+              <div className="flex flex-col gap-8">
+                {items.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <div 
+                      key={index} 
+                      className={`flex items-center gap-6 pb-8 ${index < items.length - 1 ? 'border-b border-white/10' : ''}`}
+                    >
+                      <div className="bg-white rounded-xl p-3 flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                        <Icon className="w-8 h-8 text-black" strokeWidth={1.5} />
+                      </div>
+                      <p className="font-[family-name:var(--font-urbanist)] font-normal text-[18px] lg:text-[20px] leading-[28px] tracking-[0%] text-white">
+                        {item.text}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
