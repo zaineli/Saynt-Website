@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#050818] text-white pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-16">
           {/* Left Column */}
@@ -37,12 +37,12 @@ const Footer = () => {
 
               {/* Large Logo */}
               <div className="flex items-center gap-6 mb-16">
-                <div className="relative w-48 h-48 self-start">
+                <div className="relative w-36 h-36">
                   <Image
-                    src="/logo2.svg"
+                    src="/logo2.png"
                     alt="Saynt Logo"
                     fill
-                    className="object-contain"
+                    className="object-contain object-left"
                   />
                 </div>
                 <span className="text-3xl font-medium tracking-wide">SAYNT AI</span>
