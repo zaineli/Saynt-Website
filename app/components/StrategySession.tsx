@@ -113,7 +113,12 @@ export default function StrategySession() {
         <div className="flex flex-col lg:flex-row gap-5 h-auto lg:h-[500px] w-full max-w-6xl">
            
            {/* Left Panel - Profile Info */}
-           <div className="w-full lg:w-[28%] bg-[#7FFFD4] rounded-[20px] p-8 text-[#0F172A] flex flex-col relative shadow-[0_0_100px_-20px_rgba(127,255,212,0.8)] border border-white/20">
+           <div 
+             className="w-full lg:w-[28%] rounded-[20px] p-8 text-[#0F172A] flex flex-col relative shadow-[0_0_100px_-20px_rgba(127,255,212,0.8)] border border-white/20"
+             style={{
+               background: 'linear-gradient(180deg, #45FFD1 0%, #D0FFF7 100%)',
+             }}
+           >
               <div className="flex flex-col gap-4 mb-8">
                 <div className="w-12 h-12 rounded-full bg-gray-800 overflow-hidden relative">
                   {/* Placeholder for avatar */}
@@ -130,7 +135,8 @@ export default function StrategySession() {
                   <Clock className="w-5 h-5" />
                   <span>20m</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm font-medium text-gray-700">
+                <div className="flex items-center gap-3 text-sm font-medium text-        }
+gray-700">
                   <Video className="w-5 h-5" />
                   <span>Google Meet</span>
                 </div>
@@ -147,7 +153,12 @@ export default function StrategySession() {
            </div>
 
            {/* Middle Panel - Calendar */}
-           <div className="w-full lg:w-[44%] bg-gradient-to-b from-[#2DD4BF] to-[#0F766E] rounded-[20px] p-8 text-white flex flex-col">
+           <div 
+             className="w-full lg:w-[44%] rounded-[20px] p-8 text-white flex flex-col"
+             style={{
+               background: 'linear-gradient(180deg, #45FFD1 0%, rgba(0, 224, 224, 0.56) 100%)',
+             }}
+           >
               <h3 className="text-2xl font-medium mb-6">
                 {date.toLocaleString('default', { month: 'short', year: 'numeric' })}
               </h3>
@@ -169,7 +180,12 @@ export default function StrategySession() {
            </div>
 
            {/* Right Panel - Time Slots */}
-           <div className="w-full lg:w-[28%] bg-[#14B8A6] rounded-[20px] p-6 text-[#0F172A] flex flex-col">
+           <div 
+             className="w-full lg:w-[28%] rounded-[20px] p-6 text-[#0F172A] flex flex-col"
+             style={{
+               background: 'linear-gradient(180deg, #45FFD1 0%, #00FFD2 100%)',
+             }}
+           >
               <div className="mb-4 flex justify-between items-center">
                 <h3 className="text-xl font-bold text-white/90">
                   {date.toLocaleString('default', { weekday: 'short', day: '2-digit' })}
