@@ -58,18 +58,18 @@ export default function AIStrategyDesign({
               {title}
             </h1>
             
-            <h2 className="font-medium text-[28px] lg:text-[32px] leading-[150%] tracking-[0%] text-[#4ADE80]">
+            <h2 className="font-medium text-[28px] lg:text-[32px] leading-[150%] tracking-[0%] text-[#45FFD0]">
               {subtitle}
             </h2>
             
-            <p className="font-normal text-[18px] lg:text-[20px] leading-[150%] tracking-[0%] text-gray-300">
+            <p className="font-normal text-[20px] lg:text-[24px] leading-[150%] tracking-[0%] text-gray-300">
               {description}
             </p>
           </div>
           
           {/* Card Column */}
           <div className={`relative ${reverse ? 'lg:order-1' : 'lg:order-2'}`}>
-            <div className="bg-[#1F2937] rounded-3xl p-8 lg:p-10 border border-white/10 shadow-2xl">
+            <div className="bg-[#181924] rounded-3xl p-8 lg:p-10 border border-white/10 shadow-2xl">
               <div className="flex flex-col gap-8">
                 {items.map((item, index) => {
                   const Icon = item.icon;
