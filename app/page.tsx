@@ -16,7 +16,7 @@ export default function Home() {
             <span className="block">Might <span className="font-bold">Involve AI</span> That Delivers</span>
           </>
         }
-        subtitle="You get a proven AI partner focused on your ROI goals. We help you automate workflows, accelerate execution, and achieve measurable growth. Stop spending on AI experiments. Start profiting from real business outcomes."
+        description="You get a proven AI partner focused on your ROI goals. We help you automate workflows, accelerate execution, and achieve measurable growth. Stop spending on AI experiments. Start profiting from real business outcomes."
       />
       <Features />
       <SolutionsCarousel />

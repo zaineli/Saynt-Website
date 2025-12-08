@@ -23,3 +23,149 @@ body {
   color: var(--foreground);
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
+
+
+/* SaynytDifference.css */
+.saynyt-container {
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #001122 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+.saynyt-logo-bottom {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 10;
+}
+
+.saynyt-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  z-index: 5;
+}
+
+.saynyt-title h1 {
+  font-size: 3rem;
+  background: linear-gradient(45deg, #ffffff 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  font-weight: bold;
+}
+
+.saynyt-title p {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin: 0.5rem 0 0;
+}
+
+.saynyt-sections {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 5;
+}
+
+.section-line-connector {
+  position: relative;
+  height: 100%;
+  flex: 0 0 50px; /* Space for lines */
+}
+
+.gradient-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #00ff88 0%, #00d4ff 50%, #0080ff 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.saynyt-section {
+  flex: 1;
+  background: rgba(10, 37, 64, 0.8);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 0 1rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 212, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.saynyt-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(0, 212, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.section-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #00d4ff 0%, #0080ff 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+}
+
+.section-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.saynyt-section h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.saynyt-section p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #cccccc;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .saynyt-sections {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .section-line-connector {
+    display: none; /* Hide lines on mobile */
+  }
+
+  .saynyt-section {
+    margin: 1rem 0;
+  }
+
+  .saynyt-title h1 {
+    font-size: 2rem;
+  }
+}
