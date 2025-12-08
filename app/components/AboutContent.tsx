@@ -4,7 +4,19 @@ import Image from 'next/image';
 
 export default function AboutContent() {
   return (
-    <section className="w-full bg-[#020617] text-white min-h-screen flex items-center justify-center ">
+    <section className="w-full bg-[#020617] text-white min-h-screen flex flex-col items-center justify-center ">
+      {/* Our Mission Heading */}
+      <h2 
+        className="font-[family-name:var(--font-urbanist)] font-semibold text-white text-center mb-16"
+        style={{
+          fontSize: '56px',
+          lineHeight: '120%',
+          letterSpacing: '0%',
+        }}
+      >
+        Our Mission
+      </h2>
+
       <div className="w-full flex items-center justify-center gap-32">
           {/* Left Column - Logo */}
             <div className="relative w-full max-w-[600px] aspect-square flex-basis-50">
