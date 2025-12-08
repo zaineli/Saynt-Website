@@ -10,7 +10,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    { href: "/blogs", label: "Blogs" },
+    { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact Us" },
     { href: "/careers", label: "Careers" }
   ];
@@ -24,15 +24,15 @@ export default function Navbar() {
 
   return (
     <nav className="w-full py-6">
-      <div className="w-full mx-auto px-6 flex items-center justify-between gap-16">
+      <div className="w-full mx-auto px-6 flex items-center justify-between gap-6">
         {/* Logo */}
-        <div className="flex items-center justify-center basis-1/3">
+        <div className="flex items-center size-[82px] justify-center basis-1/3">
           <Link href="/">
             <Image
               src="/logo.svg"
               alt="Saynt Logo"
-              width={48}
-              height={48}
+              width={82}
+              height={82}
               className="object-contain cursor-pointer"
             />
           </Link>
@@ -44,7 +44,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`px-6 text-sm font-medium transition-all ${
+              className={`px-6 text-[18px] font-medium transition-all ${
                 index < navLinks.length - 1 ? 'border-r border-gray-700' : ''
               } ${
                 isActive(link.href)
