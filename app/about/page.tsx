@@ -4,6 +4,8 @@ import AboutContent from "../components/AboutContent";
 import SAYNTDifference from "../components/SAYNTDifference";
 import StrategySession from "../components/StrategySession";
 import Footer from "../components/Footer";
+import FocusSection from "../components/FocusSection";
+import SaynytDifference from "../components/SaynytDifference";
 
 export default function AboutPage() {
   return (
@@ -14,7 +16,7 @@ export default function AboutPage() {
         title={
           <>
             <span className="block">Your AI Growth and</span>
-            <span className="block">Consulting Partner</span>
+            <span className="block font-bold">Consulting Partner</span>
           </>
         }
         subtitle="We Believe in Making Your Vision Meet AI-Powered Execution"
@@ -24,9 +26,13 @@ export default function AboutPage() {
       
       {/* About Content Section */}
       <AboutContent />
+
+      {/* Focus Section */}
+      <FocusSection />
       
       {/* SAYNT Difference Section */}
       {/* <SAYNTDifference /> */}
+      <SAYNTDifference />
       
       <StrategySession />
       <Footer />

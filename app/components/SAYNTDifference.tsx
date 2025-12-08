@@ -29,17 +29,17 @@ export default function SAYNTDifference() {
     <section className="w-full bg-[#0F1419] text-white py-20 lg:py-32 px-6 relative overflow-hidden">
       {/* Header */}
       <div className="text-center mb-16 lg:mb-24 relative z-10">
-        <h2 className="text-[40px] sm:text-[52px] lg:text-[64px] font-bold leading-[1.1] tracking-[-0.02em] mb-4">
-          The SAYNT <span className="text-[#00FFA3]">Difference</span>
+        <h2 className="text-[40px] sm:text-[52px] lg:text-[64px]  leading-[1.1] tracking-[-0.02em] mb-4">
+          The SAYNT <span className="text-[#00FFD2] font-semibold">Difference</span>
         </h2>
-        <p className="text-lg sm:text-xl lg:text-[22px] text-[#9CA3AF] font-normal leading-relaxed">
+        <p className="text-lg sm:text-xl lg:text-[32px] text-white font-normal leading-relaxed">
           An Outcome-First Partnership
         </p>
       </div>
 
       {/* Main Content - Centered Container */}
-      <div className="max-w-[1200px] mx-auto px-4">
-        <div className="relative flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-0">
+      <div className="w-full px-4">
+        <div className="relative flex flex-col lg:flex-row items-center justify-around gap-16 lg:gap-0">
           
           {/* Left Side - Logo */}
           <div className="flex-shrink-0 lg:mr-20">
