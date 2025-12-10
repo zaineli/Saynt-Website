@@ -24,7 +24,7 @@ export default function ServicesPage() {
         showButtons={true}
       />
 
-      <h1 className="text-7xl font-medium text-white text-center mb-6">Services</h1>
+      <h2 className="text-4xl lg:text-6xl font-medium text-center text-white">Services</h2>
 
       {/* AI Strategy and Discovery */}
       <AIStrategyDesign 

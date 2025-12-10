@@ -5,7 +5,6 @@ import SAYNTDifference from "../components/SAYNTDifference";
 import StrategySession from "../components/StrategySession";
 import Footer from "../components/Footer";
 import FocusSection from "../components/FocusSection";
-import SaynytDifference from "../components/SaynytDifference";
 
 export default function AboutPage() {
   return (
