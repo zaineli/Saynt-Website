@@ -1,37 +1,37 @@
 'use client';
+import FeatureCard from './FeatureCard';
 
-import FeatureCard from "./FeatureCard";
 
 export default function Features() {
   return (
-    <section className="w-full py-20 lg:py-24">
+    <section className="w-full py-12 md:py-20 lg:py-24 px-5 md:px-8">
       <div className="max-w-8xl mx-auto flex flex-col items-center">
         {/* Section Header */}
-        <div className="text-center mb-16 w-full">
-          <h2 className="text-white text-4xl md:text-5xl font-medium mb-6">
+        <div className="text-center mb-12 md:mb-16 w-full">
+          <h2 className="text-white text-[28px] md:text-4xl lg:text-5xl font-medium mb-4 md:mb-6 px-4 md:px-0">
             You need AI that works for your business
           </h2>
-          <p className="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+          <p className="text-gray-300 text-[15px] md:text-lg max-w-4xl mx-auto leading-relaxed px-4 md:px-0">
             <span className="font-semibold text-white">SAYNT is your strategic growth partner</span>. We help you identify high-impact AI opportunities and
             implement solutions that deliver tangible results. You achieve faster operations, lower costs, and
             a clear competitive edge.
           </p>
         </div>
-
+        
         {/* How We Help You Win */}
-        <div className="text-center mb-12">
-          <h3 className="text-white text-3xl md:text-4xl font-bold mb-4">
+        <div className="text-center mb-10 md:mb-12">
+          <h3 className="text-white text-[26px] md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 px-4 md:px-0">
             How We Help You <span className="text-[#00FFD2]">Win</span>
           </h3>
-          <p className="text-gray-300 text-lg font-medium">
+          <p className="text-gray-300 text-[15px] md:text-lg font-medium px-4 md:px-0">
             Achieve Faster Execution and Predictable ROI
           </p>
         </div>
-
+        
         {/* Feature Cards Grid */}
-        <div className="flex flex-col gap-16 w-full items-center">
-          {/* First Row - 3 cards */}
-          <div className="flex flex-wrap justify-center gap-6 w-full">
+        <div className="flex flex-col gap-10 md:gap-12 lg:gap-16 w-full items-center">
+          {/* First Row - 3 cards (stacked on mobile) */}
+          <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8 md:gap-6 w-full items-center md:items-stretch">
             <FeatureCard
               icon="/mind.svg"
               title="AI Strategy You Can Trust"
@@ -40,7 +40,6 @@ export default function Features() {
               highlightText="AI investment strategy with proven ROI modeling."
               circlePosition="bottom-right"
             />
-
             <FeatureCard
               icon="/scale.svg"
               title="De-Risk Your AI Projects"
@@ -49,7 +48,6 @@ export default function Features() {
               highlightText="uncertainty and accelerate your time to value."
               circlePosition="top-left"
             />
-
             <FeatureCard
               icon="/automation.svg"
               title="Scalable AI Systems"
@@ -59,9 +57,9 @@ export default function Features() {
               circlePosition="bottom-right"
             />
           </div>
-
-          {/* Second Row - 2 cards */}
-          <div className="flex flex-wrap justify-center gap-6 w-full">
+          
+          {/* Second Row - 2 cards (stacked on mobile) */}
+          <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8 md:gap-6 w-full items-center md:items-stretch">
             <FeatureCard
               icon="/automation.svg"
               title="Scalable AI Systems"

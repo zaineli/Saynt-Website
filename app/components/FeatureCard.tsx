@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 
 interface FeatureCardProps {
@@ -20,44 +21,40 @@ export default function FeatureCard({
   circlePosition = 'bottom-right'
 }: FeatureCardProps) {
   return (
-    <div className="flex flex-col gap-5 w-full max-w-[420px]">
+    <div className="flex flex-col gap-3 md:gap-4 w-full max-w-[420px]">
       {/* Main Card */}
       <div 
-        className="flex flex-col relative p-6 min-h-[440px]"
+        className="flex flex-col relative p-6 md:p-8 min-h-[380px] md:min-h-[440px]"
         style={{
           borderRadius: '8px',
-          padding: '32px',
           background: '#181924',
         }}
       >
         {/* Icon */}
-        <div className="size-[80px] relative z-10 mb-24">
+        <div className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] relative z-10 mb-16 md:mb-24">
           <Image 
             src={icon} 
             alt={title} 
             width={80}
             height={80}
-            className="object-contain size-[80px]" 
+            className="object-contain w-full h-full" 
           />
         </div>
-        
         {/* Title */}
-        <h3 className="text-white text-[48px] md:text-[32px] font-medium leading-tight relative z-10">
+        <h3 className="text-white text-[26px] md:text-[32px] font-medium leading-tight relative z-10 mb-4">
           {title}
         </h3>
-        
         {/* Description */}
-        <p className="text-gray-400 text-[15px] md:text-[16px] leading-[1.6] relative z-10 mt-auto">
+        <p className="text-gray-400 text-[14px] md:text-[16px] leading-[1.6] relative z-10 mt-auto">
           {description}
         </p>
       </div>
-
       {/* Secondary Card */}
       <div 
-        className="relative overflow-hidden flex items-center min-h-[90px]"
+        className="relative overflow-hidden flex items-center min-h-[80px] md:min-h-[90px]"
         style={{
           borderRadius: '16px',
-          padding: '24px 20px',
+          padding: '20px 16px',
           background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.08) 100%)',
           border: '1px solid',
           borderImageSource: 'linear-gradient(180deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0) 100%)',
@@ -72,7 +69,7 @@ export default function FeatureCard({
         }}
       >
         {/* Text with gradient highlights */}
-        <p className="text-white text-sm md:text-base leading-relaxed relative z-10">
+        <p className="text-white text-[13px] md:text-base leading-relaxed relative z-10">
           {beforeHighlight}{' '}
           <span className="bg-gradient-to-l from-white via-[#05FFEE] via-[#05FFEE] to-[#05FFEE] bg-clip-text text-transparent font-medium">
             {highlightText}
@@ -83,7 +80,6 @@ export default function FeatureCard({
             </>
           )}
         </p>
-        
         {/* Circle decoration */}
         <div className={`absolute w-32 h-32 opacity-50 ${
           circlePosition === 'top-left' 
