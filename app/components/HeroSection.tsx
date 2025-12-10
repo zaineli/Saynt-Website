@@ -20,12 +20,12 @@ export default function HeroSection({
   showButtons = true
 }: HeroSectionProps) {
   return (
-    <section className="w-full min-h-screen flex items-center justify-center px-4 -mt-20 pt-20">
-      <div className="w-full  flex flex-col items-center justify-center text-center">
+    <section className="w-full md:min-h-screen flex items-center justify-center px-8 mb:px-4 py-20 md:py-0 md:-mt-20 md:pt-20 ">
+      <div className="w-full flex flex-col items-center justify-center text-center">
         {/* Badge */}
         {badge && (
-          <div className="bg-gray-800/50 rounded-full px-5 py-2.5 mb-10">
-            <span className="text-gray-400 text-sm flex items-center gap-2">
+          <div className="bg-gray-800/50 rounded-full px-3 md:px-5 py-2 md:py-2.5 mb-6 md:mb-10">
+            <span className="text-gray-400 text-xs md:text-sm flex items-center gap-2">
               {badge}
             </span>
           </div>
@@ -33,7 +33,7 @@ export default function HeroSection({
 
         {/* Main Heading */}
         <h1 
-          className="text-5xl md:text-6xl lg:text-[96px] font-medium text-center mb-8 leading-tight bg-clip-text text-transparent"
+          className="text-[36px] md:text-6xl lg:text-[96px] font-medium text-center mb-5 md:mb-8 leading-[36px] md:leading-tight tracking-[-1.4px] md:tracking-normal bg-clip-text text-transparent"
           style={{
             background: 'linear-gradient(85.88deg, #FFFFFF 72.98%, rgba(186, 186, 186, 0) 100%)',
             WebkitBackgroundClip: 'text',
@@ -44,44 +44,46 @@ export default function HeroSection({
         </h1>
 
         {/* Subheading */}
-        <p className="text-white text-lg md:text-2xl font-normal text-center mb-16 max-w-4xl leading-relaxed">
+        <p className="text-white text-[14px] md:text-lg lg:text-2xl font-normal text-center mb-8 md:mb-16 max-w-4xl leading-[18px] md:leading-relaxed">
           {subtitle}
         </p>
 
         {/* Description */}
         {description && (
           <p 
-            className="text-gray-300 font-normal text-center mb-12 max-w-6xl mt-12"
-            style={{
-              fontSize: '29.19px',
-              lineHeight: '37.95px',
-              letterSpacing: '0px',
-            }}
+            className="text-gray-300 font-normal text-center mb-8 md:mb-12 max-w-6xl mt-6 md:mt-12 text-[14px] md:text-[29.19px] leading-[18px] md:leading-[37.95px]"
           >
             {description}
           </p>
         )}
 
-        {!description && <div className="mb-6" />}
+        {!description && <div className="mb-4 md:mb-6" />}
 
         {/* CTA Buttons */}
         {showButtons && (
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-row gap-3 md:gap-4 flex-wrap justify-center">
             <button 
-              className="text-black font-medium px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+              className="text-black font-medium rounded-full flex items-center justify-center gap-1.5 md:gap-2 hover:opacity-90 transition-opacity text-sm md:text-base px-4 md:px-8 py-2.5 md:py-4 whitespace-nowrap"
               style={{
                 background: 'linear-gradient(90deg, #45FFD1 0%, #05FFEE 100%)',
+                borderRadius: '24.83px',
               }}
             >
               {primaryButtonText}
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
+
             {secondaryButtonText && (
-              <button className="bg-white hover:bg-gray-100 text-black font-semibold px-8 py-4 rounded-full flex items-center justify-center gap-2 transition-colors">
+              <button 
+                className="bg-white hover:bg-gray-100 text-black font-semibold rounded-full flex items-center justify-center gap-1.5 md:gap-2 transition-colors text-sm md:text-base px-4 md:px-8 py-2.5 md:py-4 whitespace-nowrap"
+                style={{
+                  borderRadius: '24.83px',
+                }}
+              >
                 {secondaryButtonText}
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
