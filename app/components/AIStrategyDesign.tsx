@@ -3,7 +3,7 @@ import { LucideIcon } from 'lucide-react';
 import Image from 'next/image';
 
 interface ServiceItem {
-  icon: LucideIcon;
+  icon: string;
   text: string;
 }
 
@@ -25,7 +25,7 @@ export default function AIStrategyDesign({
   showServicesHeader = false
 }: AIStrategyDesignProps) {
   return (
-    <div className="w-full bg-[#020617] text-white relative py-16 lg:py-32 overflow-hidden">
+    <div className="w-full bg-[#020617] text-white relative py-8 lg:py-16 overflow-hidden">
       {/* Background lines image for desktop - positioned in center connecting the two sections, flips with layout */}
       <div className={`absolute top-1/2 -translate-y-1/2 w-[300px] md:w-[400px] lg:w-[600px] h-[200px] md:h-[300px] lg:h-[400px] pointer-events-none z-0 opacity-90 hidden lg:block ${
         reverse ? 'right-1/2 translate-x-1/2 scale-x-[-1]' : 'left-1/2 -translate-x-1/2'
@@ -73,7 +73,13 @@ export default function AIStrategyDesign({
                       className={`flex items-center gap-4 sm:gap-6 pb-6 lg:pb-8 ${index < items.length - 1 ? 'border-b border-white/10' : ''}`}
                     >
                       <div className="bg-white rounded-xl p-2 lg:p-3 flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center">
-                        <Icon className="w-6 h-6 lg:w-8 lg:h-8 text-black" strokeWidth={1.5} />
+                        <Image
+                          src={item.icon as string}
+                          alt={`Service Icon ${index + 1}`}
+                          width={32}
+                          height={32}
+                          className="object-contain"
+                        />
                       </div>
                       <p className="font-[family-name:var(--font-urbanist)] font-normal text-[16px] sm:text-[18px] lg:text-[20px] leading-[28px] tracking-[0%] text-white">
                         {item.text}

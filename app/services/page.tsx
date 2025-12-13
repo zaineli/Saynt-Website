@@ -19,8 +19,8 @@ export default function ServicesPage() {
         }
         subtitle="Get AI Consulting Services That Make Execution 100% Faster"
         description="You receive end-to-end AI expertise focused on your bottom line goals. We help you automate processes, build scalable systems, and accelerate product development to achieve measurable ROI."
-        primaryButtonText="Discover Your AI Opportunities"
-        secondaryButtonText=""
+        primaryButtonText=""
+        secondaryButtonText="Discover Your AI Opportunities"
         showButtons={true}
       />
 
@@ -32,9 +32,9 @@ export default function ServicesPage() {
         subtitle="Build Your Confident AI Investment Plan"
         description="We will pinpoint the AI opportunities that deliver the highest return. Our strategy workshop gives you a clear, business-focused roadmap and actionable ROI model."
         items={[
-          { icon: BarChart3, text: "Your clear AI investment strategy" },
-          { icon: Coins, text: "Your data-driven AI ROI model" },
-          { icon: Lightbulb, text: "Your prioritized plan for AI implementation" }
+          { icon: "/services/1.svg", text: "Your clear AI investment strategy" },
+          { icon: "/services/2.svg", text: "Your data-driven AI ROI model" },
+          { icon: "/services/3.svg", text: "Your prioritized plan for AI implementation" }
         ]}
       />
       
@@ -44,9 +44,9 @@ export default function ServicesPage() {
         subtitle="Validate Your AI Ideas In 2-3 Weeks, Not Months"
         description="You can de-risk your AI projects with a working prototype. Our discovery sprint proves the value of your concept quickly, saving you time and resources"
         items={[
-          { icon: Cpu, text: "Your validated AI concept with working proof" },
-          { icon: CheckCircle2, text: "Reducing project risk for you" },
-          { icon: TrendingUp, text: "A faster path towards implementation" }
+          { icon: "/services/4.svg", text: "Your validated AI concept with working proof" },
+          { icon: "/services/5.svg", text: "Reducing project risk for you" },
+          { icon: "/services/6.svg", text: "A faster path towards implementation" }
         ]}
         reverse={true}
       />
@@ -57,9 +57,9 @@ export default function ServicesPage() {
         subtitle="Keep Your AI Running at Peak Performance"
         description="We handle the ongoing management, monitoring, and optimization of your AI systems. Focus on your business while we ensure your models stay accurate, efficient, and compliant."
         items={[
-          { icon: Settings, text: "24/7 model monitoring and maintenance" },
-          { icon: Zap, text: "Automated retraining and updates" },
-          { icon: Workflow, text: "Complete MLOps pipeline management" }
+          { icon: "/services/7.svg", text: "Your production-ready AI systems" },
+          { icon: "/services/8.svg", text: "Your reliable model performance" },
+          { icon: "/services/9.svg", text: "Your managed AI infrastructure" }
         ]}
       />
       
@@ -69,9 +69,9 @@ export default function ServicesPage() {
         subtitle="Eliminate Repetitive Tasks, Accelerate Operations"
         description="Transform manual processes into intelligent automated workflows. We integrate AI into your existing systems to save time, reduce errors, and free your team for strategic work."
         items={[
-          { icon: Workflow, text: "Custom AI workflow integration" },
-          { icon: Zap, text: "Process automation that learns and improves" },
-          { icon: TrendingUp, text: "Measurable time and cost savings" }
+          { icon: "/services/10.svg", text: "Your automated enterprise workflows" },
+          { icon: "/services/11.svg", text: "Your reduced processing time and errors" },
+          { icon: "/services/12.svg", text: "Your lower operational costs" }
         ]}
         reverse={true}
       />
@@ -82,13 +82,22 @@ export default function ServicesPage() {
         subtitle="Launch Your AI Product Fast"
         description="Build and deploy your AI-powered MVP in weeks, not months. Get to market quickly with a production-ready solution that validates your concept and attracts investors."
         items={[
-          { icon: Code, text: "Full-stack AI product development" },
-          { icon: Rocket, text: "Fast deployment and iteration cycles" },
-          { icon: Target, text: "Investor-ready demos and documentation" }
+          { icon: "/services/13.svg", text: "Your market-ready AI product" },
+          { icon: "/services/14.svg", text: "Your accelerated time to market" },
+          { icon: "/services/15.svg", text: "Your clear product roadmap" }
         ]}
       />
       
-      <StrategySession />
+      <StrategySession
+  title={
+    <>
+      Identify Your Most Valuable <br className="hidden md:block" />
+      <span className="text-[#45FFD0]">AI Opportunity</span>
+    </>
+  }
+  description="Our AI Readiness Assessment pinpoints your best path to efficiency and growth"
+/>
+
       <Footer />
     </main>
   );

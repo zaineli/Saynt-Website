@@ -33,7 +33,7 @@ export default function Features() {
           {/* First Row - 3 cards (stacked on mobile) */}
           <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8 md:gap-6 w-full items-center md:items-stretch">
             <FeatureCard
-              icon="/mind.svg"
+              icon="/feature_card/1.svg"
               title="AI Strategy You Can Trust"
               description="You will discover exactly where to invest in AI for maximum return. We build your actionable AI roadmap so you can move forward with confidence."
               beforeHighlight="Gain a clear"
@@ -41,7 +41,7 @@ export default function Features() {
               circlePosition="bottom-right"
             />
             <FeatureCard
-              icon="/scale.svg"
+              icon="/feature_card/2.svg"
               title="De-Risk Your AI Projects"
               description="You can validate your AI ideas quickly. Our rapid prototyping delivers a working proof of concept in 2-3 weeks, proving value before you make a major investment."
               beforeHighlight="Eliminate"
@@ -49,7 +49,7 @@ export default function Features() {
               circlePosition="top-left"
             />
             <FeatureCard
-              icon="/automation.svg"
+              icon="/feature_card/3.svg"
               title="Scalable AI Systems"
               description="You will deploy and manage AI models that perform reliably. Our full lifecycle support ensures your AI systems scale with your business."
               beforeHighlight="Achieve"
@@ -61,19 +61,19 @@ export default function Features() {
           {/* Second Row - 2 cards (stacked on mobile) */}
           <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8 md:gap-6 w-full items-center md:items-stretch">
             <FeatureCard
-              icon="/automation.svg"
-              title="Scalable AI Systems"
-              description="You will deploy and manage AI models that perform reliably. Our full lifecycle support ensures your AI systems scale with your business."
-              beforeHighlight="Achieve"
-              highlightText="robust model performance with continuous monitoring."
+              icon="/feature_card/4.svg"
+              title="Automate Workflows, Boost Efficiency"
+              description="You can slash the time spent on repetitive tasks. We automate your key processes in operations, finance, and HR to drive down costs and errors"
+              beforeHighlight="Reduce"
+              highlightText="workflow time by up to 60% and reallocate your team to strategic work"
               circlePosition="top-left"
             />
             <FeatureCard
-              icon="/automation.svg"
-              title="Scalable AI Systems"
-              description="You will deploy and manage AI models that perform reliably. Our full lifecycle support ensures your AI systems scale with your business."
-              beforeHighlight="Achieve"
-              highlightText="robust model performance with continuous monitoring."
+              icon="/feature_card/5.svg"
+              title="Launch Your AI Product Faster"
+              description="You will bring your AI product to market with speed. We partner with startups to build compelling MVPs, helping you secure your market position quickly"
+              beforeHighlight="Go from"
+              highlightText="concept to market ready MVP in 2-3 months with confidence"
               circlePosition="bottom-right"
             />
           </div>

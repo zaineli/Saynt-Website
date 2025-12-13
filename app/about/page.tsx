@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#050818] font-sans">
       <Navbar />
-      <HeroSection 
+      <HeroSection
         badge=""
         title={
           <>
@@ -19,21 +19,32 @@ export default function AboutPage() {
           </>
         }
         subtitle="We Believe in Making Your Vision Meet AI-Powered Execution"
-        description="You need a partner who delivers real results. SAYNT provides the strategic guidance and practical AI solutions that drive your efficiency, growth, and competitive advantage"
+        descriptionBold={true}
         showButtons={false}
       />
-      
+
       {/* About Content Section */}
       <AboutContent />
 
       {/* Focus Section */}
       <FocusSection />
-      
+
       {/* SAYNT Difference Section */}
       {/* <SAYNTDifference /> */}
       <SAYNTDifference />
+
       
-      <StrategySession />
+      
+          <StrategySession
+          title={
+            <>
+              Let Us Help You Build the<br className="hidden md:block" />
+              <span className="text-[#45FFD0]">Future of Your Business</span>
+            </>
+        }
+            description=""
+          />
+          
       <Footer />
     </main>
   );

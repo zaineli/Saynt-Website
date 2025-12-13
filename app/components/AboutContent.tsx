@@ -12,7 +12,7 @@ export default function AboutContent() {
       </h2>
       <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-32">
         {/* Left Column - Logo */}
-        <div className="relative w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[600px] aspect-square">
+        <div className="relative w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[550px] aspect-square flex-basis-1/3">
           <Image
             src="/logo3.svg"
             alt="Saynt Logo"
@@ -21,7 +21,7 @@ export default function AboutContent() {
           />
         </div>
         {/* Right Column - Content */}
-        <div className="space-y-6 lg:space-y-10 w-full max-w-xl lg:max-w-2xl">
+        <div className="space-y-6 lg:space-y-10 w-full max-w-xl lg:max-w-3xl flex-basis-2/3">
           <div className="space-y-4 lg:space-y-8">
             <h2 className="font-[family-name:var(--font-urbanist)] font-semibold text-[36px] sm:text-[48px] lg:text-[64px] leading-[1.2] tracking-[0%] text-[#45FFD0]">
               Your Partner in Practical AI Transformation

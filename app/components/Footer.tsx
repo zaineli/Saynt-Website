@@ -26,15 +26,13 @@ const Footer = () => {
               <nav className="flex flex-col md:flex-row md:flex-wrap md:items-center gap-2 md:gap-x-4 md:gap-y-2 text-sm mb-8 md:mb-24">
                 <a href="#" className="text-[#00FFD2] hover:text-[#00FFD2]/80 transition-colors">Home</a>
                 <span className="text-gray-700 hidden md:inline">/</span>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Solutions</a>
-                <span className="text-gray-700 hidden md:inline">/</span>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">About us</a>
                 <span className="text-gray-700 hidden md:inline">/</span>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Resources</a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">Blogs</a>
                 <span className="text-gray-700 hidden md:inline">/</span>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact Us</a>
                 <span className="text-gray-700 hidden md:inline">/</span>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Customer Portal</a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a>
               </nav>
 
               {/* Large Logo - Desktop only here */}
@@ -65,20 +63,6 @@ const Footer = () => {
           {/* Right Column */}
           <div className="flex flex-col h-full justify-between">
             <div className="space-y-6 md:space-y-10 flex flex-col items-start lg:self-end">
-              {/* Contact Us */}
-              <div>
-                <h4 className="text-[#00FFD2] text-xs md:text-sm font-medium mb-2 md:mb-3">Contact Us</h4>
-                <a href="tel:+18919891191" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
-                  +1 891 989-11-91
-                </a>
-              </div>
-
-              {/* Hours */}
-              <div>
-                <h4 className="text-[#00FFD2] text-xs md:text-sm font-medium mb-2 md:mb-3">Mo—Fr</h4>
-                <p className="text-gray-400 text-sm md:text-base">9am—6pm</p>
-              </div>
-
               {/* Location */}
               <div>
                 <h4 className="text-[#00FFD2] text-xs md:text-sm font-medium mb-2 md:mb-3">Location</h4>
@@ -94,6 +78,19 @@ const Footer = () => {
                 <a href="mailto:contact@saynt.org" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
                   contact@saynt.org
                 </a>
+              </div>
+              {/* Contact Us */}
+              <div>
+                <h4 className="text-[#00FFD2] text-xs md:text-sm font-medium mb-2 md:mb-3">Contact Us</h4>
+                <a href="tel:+18919891191" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
+                  +1 891 989-11-91
+                </a>
+              </div>
+
+              {/* Hours */}
+              <div>
+                <h4 className="text-[#00FFD2] text-xs md:text-sm font-medium mb-2 md:mb-3">Mo—Fr</h4>
+                <p className="text-gray-400 text-sm md:text-base">9am—6pm</p>
               </div>
             </div>
 

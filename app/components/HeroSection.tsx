@@ -5,6 +5,7 @@ interface HeroSectionProps {
   title: string | React.ReactNode;
   subtitle?: string;
   description?: string;
+  descriptionBold?: boolean;
   primaryButtonText?: string;
   secondaryButtonText?: string;
   showButtons?: boolean;
@@ -15,6 +16,7 @@ export default function HeroSection({
   title,
   subtitle,
   description,
+  descriptionBold,
   primaryButtonText = "Start Your AI Assessment",
   secondaryButtonText = "See Your ROI Potential",
   showButtons = true
@@ -49,20 +51,31 @@ export default function HeroSection({
         </p>
 
         {/* Description */}
-        {description && (
-          <p 
-            className="text-gray-300 font-normal text-center mb-8 md:mb-12 max-w-6xl mt-6 md:mt-12 text-[14px] md:text-[29.19px] leading-[18px] md:leading-[37.95px]"
-          >
-            {description}
-          </p>
-        )}
+
+        {(description || descriptionBold) && (
+  <p 
+    className="text-gray-300 font-normal text-center mb-8 md:mb-12 max-w-6xl mt-6 md:mt-12 text-[14px] md:text-[29.19px] leading-[18px] md:leading-[37.95px]"
+  >
+    {descriptionBold ? (
+      <>
+        You need a partner who delivers real results.{" "}
+        <span className="font-bold">
+          SAYNT provides the strategic guidance and practical AI solutions
+        </span>{" "}
+        that drive your efficiency, growth, and competitive advantage
+      </>
+    ) : (
+      description
+    )}
+  </p>
+)}
 
         {!description && <div className="mb-4 md:mb-6" />}
 
         {/* CTA Buttons */}
         {showButtons && (
           <div className="flex flex-row gap-3 md:gap-4 flex-wrap justify-center">
-            <button 
+            {primaryButtonText && (<button 
               className="text-black font-medium rounded-full flex items-center justify-center gap-1.5 md:gap-2 hover:opacity-90 transition-opacity text-sm md:text-base px-4 md:px-8 py-2.5 md:py-4 whitespace-nowrap"
               style={{
                 background: 'linear-gradient(90deg, #45FFD1 0%, #05FFEE 100%)',
@@ -73,7 +86,7 @@ export default function HeroSection({
               <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </button>
+            </button>)}
 
             {secondaryButtonText && (
               <button 

@@ -20,7 +20,16 @@ export default function Home() {
       />
       <Features />
       <SolutionsCarousel />
-      <StrategySession />
+            <StrategySession
+  title={
+    <>
+      Ready To Discover Your <br className="hidden md:block" />
+      Next<span className="text-[#45FFD0]"> Brilliant Move?</span>
+    </>
+  }
+  description="Your free AI assessment identifies your top opportunity for efficiency and growth."
+/>
+
       <Footer />
     </main>
   );
